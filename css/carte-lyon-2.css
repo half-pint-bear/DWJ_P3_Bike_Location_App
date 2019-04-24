@@ -1,0 +1,446 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Font Awesome", sans-serif;
+}
+
+nav {
+	display: inline;
+	width: 100%;
+	position: fixed;
+	z-index: 999;
+	background-color: #FFF;
+}
+
+#logo {
+	margin: 10px 0 10px 50px;
+}
+
+ul {
+	list-style-type: none;
+	display: inline-block;
+	float: right;
+	margin: 40px 80px 30px 0;
+}
+
+li {
+	display: inline;
+	margin-right: 10px;
+	font-size: 1.5em;	
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	font-weight: bold;
+	text-decoration: underline #e10202;
+}
+
+#slideshow-container {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+
+/*Cacher images par dÃ©faut*/
+.diapo {
+	display: none;
+	width: 100%;
+	height: 900px;
+}
+
+/*Redimensionnement des images */
+.A {
+	background: url("../img/deplacements_velov_item_1200.jpg") no-repeat;
+	background-size: cover;
+}
+
+.B {
+	background: url("../img/img_2420.jpg") no-repeat;
+	background-size: cover;
+}
+
+.C {
+	background: url("../img/velovs3.jpg") no-repeat;
+	background-size: cover;
+}
+
+.D {
+	background: url("../img/velos-lyon.jpg") no-repeat;
+	background-size: cover;
+}
+
+.E {
+	background: url("../img/Lyon_nyro_max.jpg") no-repeat;
+	background-size: cover;
+}
+
+/*Placement et dimensionnement du texte inhÃ©rents aux diapositives*/
+.legende {
+	top: 400px;
+	left: 500px;
+	color: #f2f2f2;
+	font-size: 2.5em;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-shadow: 10px 10px 10px black;
+	align-content: center;
+	align-self: center;
+}
+
+
+/* CrÃ©ation flÃ¨ches bouton "Suivant" & "PrÃ©cÃ©dent" */
+#suivant, #precedent {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	margin-top: -22px;
+	padding: 16px;
+	color: #e10202;
+	background-color: rgba(0, 0, 0, 0.8);
+	font-weight: bold;
+	font-size: 2.5em;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+
+/*Placement Ã  droite du bouton "Suivant" */
+#suivant {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+
+#suivant:hover, #precedent:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-decoration: none;
+}
+
+
+#carte {
+	height: 100%;
+	overflow: hidden;
+	width: 100%;
+}
+
+#map {
+	height: 100%;
+	width: 100%;
+	float: left;
+	clear: both;
+}
+
+#reservation{
+	display: none;
+	height: 100%;
+	background-color: #e8e8e8;
+	flex-direction: column;
+	text-align: center;
+}
+
+#enTeteReservation {
+	display: inline-block;
+	margin-top: 100px;
+}
+
+.fa-times {
+    cursor: pointer;
+    color: #e10202;
+    font-size: 2em;
+    margin-top: 50px;
+    margin-right: 50px;
+    float: right;
+    text-align: right;
+
+}
+
+#nom {
+	margin-top: 50px;
+	font-size: 1.2em;
+}
+
+hr {
+    margin: 30px 20%;
+    color: #eee;
+}
+
+#reserver button {
+	height: 80px;
+	width: 90%;
+	margin: 0 20px;
+	border-radius: 1em;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#reservationActive {
+	background-color: dodgerblue;
+	color: white;
+}
+
+#reservationInactive, #stationFermee {
+	background-color: #e10202;
+	color: white;
+	display: none;
+}
+
+#reservationActive:hover {
+	background-color: white;
+	color: dodgerblue;
+	cursor: pointer;
+}
+
+#reservationInactive:hover, #stationFermee:hover {
+	color: #e10202;
+	background-color: white;
+}
+
+#blocCanvas {
+	display: none;
+}
+
+#cadreCanvas {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	height: 100%;
+	width: 90%;
+	margin-left: 5%;
+}
+
+#canvas {
+	background-color: white;
+	margin: 0;
+}
+
+#boutonCanvas {
+	display: inline-block;
+	justify-content: space-between;
+	margin: 20px 0;
+}
+
+#valider {
+	font-size: 1.2em;
+	font-weight: bold;
+	height: 2em;
+	color: white;
+	background-color: green;
+	margin-right: 20px;
+	border-radius: 0.5em;
+}
+
+#effacer {
+	font-size: 1.2em;
+	height: 2em;
+	color: white;
+	background-color: #ff7522;
+	margin-right: 20px;
+	border-radius: 0.5em;
+}
+
+#annuler {
+	height: 2em;
+	font-size: 1.2em;
+	font-weight: bold;
+	color: white;
+	background-color: #e10202;
+	border-radius: 0.5em;
+}
+
+#valider:hover {
+	color: green;
+	background-color: white;
+}
+
+#effacer:hover {
+	color: #ff7522;
+	background-color: white;
+}
+
+#annuler:hover {
+	color: #e10202;
+	background-color: white;
+}
+
+#compteur {
+	font-weight: bold;
+	margin-left: 0;
+	background-color: #FFF;
+}
+
+#compteur span {
+	color: green;
+}
+
+/*Smartphones orientation portrait */
+@media all and (max-width: 736px) 
+{
+	nav {
+		display: flex;
+		flex-direction: row;
+		padding-top: 20px;
+		justify-content: center;
+	}
+	
+	#logo {
+		height: 25px;
+		margin: 0 0 15px 10px;
+	}
+
+	ul {
+		margin: 0;
+		font-size: 0.6em;
+	}
+
+	#slideshow-container {
+		position: relative;
+		height: 300px;
+		padding-top: 62px;
+	}
+
+	.diapo {
+		height: 100%;
+	}
+
+	.legende {
+		width: 50%;
+		top: 100px;
+		left: 90px;
+		font-size: 1.5em;
+		justify-content: center;
+	}
+
+	hr {
+		margin-top: 10px;
+	}
+
+	#reservation {
+		font-size: 0.8em;
+	}
+
+	#enTeteReservation {
+		display: inline-flex;
+		flex-direction: row-reverse;
+		justify-content: space-around;
+		margin-top: 10px;
+	}
+
+	.fa-times {
+		margin: 20px 10px 0 0;
+		font-size: 1.5em;
+	}
+
+	#nom {
+		font-size: 1.2em;
+		margin-top: 20px;
+		justify-content: center;
+	}
+
+	
+
+
+
+	
+}
+
+/*Orientation paysage */
+@media all and (max-width: 736px) and (orientation: landscape)
+{
+
+	nav {
+		padding-top: 5px;
+	}
+
+	#logo {
+		height: 20px;
+	}
+
+	.legende {
+		top: 120px;
+		left: 25%;
+	}
+
+	#reservation {
+		font-size: 0.7em;
+	}
+
+	#enTeteReservation {
+		margin-top: 0;
+		justify-content: space-around;
+	}
+
+	.fa-times {
+		font-size: 1.5em;
+	}
+
+	#nom {
+		font-size: 0.9em;
+		margin-left: 50px;
+	}
+
+	hr {
+		margin: 1px 20%;
+	}
+
+	#reserver button {
+		height: 60px;
+		font-size: 1em;
+	}
+
+	
+	
+}
+
+/*Tablettes*/
+@media all and (min-width: 737px) and (max-width: 1024px) and (orientation: portrait)
+{
+	#logo {
+		height: 40px;
+		margin-top: 30px;
+	}
+
+	.legende {
+		left: 15%;
+		width: 80%;
+		justify-content: center;
+		align-self: center;
+	}
+
+	
+
+}
+
+/*Orientation paysage*/
+@media all and (min-width: 737px) and (max-width: 1024px) and (orientation: landscape)
+{
+	#logo {
+		height: 40px;
+		margin-top: 30px;
+	}
+
+	.legende {
+		left: 25%;
+		width: 60%;
+	}
+
+	#enTeteReservation {
+		margin-top: 60px;
+	}
+
+	#infos {
+		margin-top: 10px;
+	}
+
+	hr {
+		margin-top: 1px;
+	}
+
+	
+}	
