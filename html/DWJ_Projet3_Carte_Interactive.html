@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vélo'v | Lyon</title>
+
+	<link rel="stylesheet" type="text/css" href="../css/carte-lyon-2.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+	<!-- Insertion icônes --->
+	<link rel="apple-touch-icon" sizes="60x60" href="../img/index-60x60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="../img/index-120x120.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="../img/index-180x180.png">
+	<link rel="icon" sizes="192x192" href="../img/index-android-192x192.png">
+	<link rel="icon" sizes="32x32" href="../img/index-32x32.png">
+	<link rel="icon" sizes="96x96" href="../img/index-96x96.png">
+	<link rel="icon" sizes="16x16" href="../img/index-16x16.png">
+
+	<!-- Balises Open Graph -->
+	<meta property="og:title" content="Vélo'v | Lyon">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://www.half-pint-bear.com/DWJ_Projet3_Carte_Interactive_de_location_de_velo/html/DWJ_Projet3_Carte_Interactive.html">
+	<meta property="og:image" content="http://www.half-pint-bear.com/DWJ_Projet3_Carte_Interactive_de_location_de_velo/img/logo.png">
+	<meta property="og:description" content="Besoin d'un vélo pour parcourir Lyon? Nous vous aidons à en trouver un proche de vous!"/>
+	<meta property="og:locale" content="fr_FR" />
+
+	<!-- Balises Twitter Card -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="Vélo'v | Lyon">
+	<meta name="twitter:description" content="Besoin d'un vélo pour parcourir Lyon? Nous vous aidons à en trouver un proche de vous!">
+	<meta name="twitter:image" content="http://www.half-pint-bear.com/DWJ_Projet3_Carte_Interactive_de_location_de_velo/img/logo.png">
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<img id="logo" alt="velo'v_Lyon" src="../img/logo.png">
+			<ul>
+				<li><a href="#">Accueil</a></li>
+				<li><a href="#carte">Réservation</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Conteneur du diaporama -->
+	<section id="slideshow-container">
+		
+			<!-- Images "full-width" avec numéro et légende -->
+			<div class="diapo A">
+				<p class="legende">Bonjour et bienvenue sur le site vélo'v de la ville de Lyon</p>
+			</div>
+
+			<div class="diapo B">
+				<P class="legende">Sélectionnez une station depuis la carte ci-dessous</p>
+			</div>
+
+			<div class="diapo C">
+				<p class="legende">Une fois votre choix effectué, votre réservation <br> sera effective pendant 20 minutes</p>
+			</div>
+
+			<div class="diapo D">
+				<p class="legende">Vous n'avez plus qu'à enfourcher votre vélo'v</p>
+			</div>
+
+			<div class="diapo E">
+				<p class="legende">Nous vous souhaitons une agréable promenade!</p>
+			</div>
+
+	
+
+		<!-- Boutons "Suivant" & "Précédent"-->
+		<a id="precedent">&#10094;</a>
+		<a id="suivant">&#10095;</a>
+
+	</section>
+
+	<section id="carte">
+		
+			<div id="map"></div>
+			
+			<div id="reservation">
+				<div id="enTeteReservation">
+					<i class="fas fa-times" title="Fermer"></i>
+					<h2 id="nom">Nom de la station</h2>
+				</div>
+
+				<hr>
+				
+				<p id="adresse">Adresse</p>
+				<p id="statut"></p>
+
+				<hr>
+
+				<div id="blocInitial">
+
+					<p id="capacite"></p>
+					<p id="velos_dispos"></p>
+					<p id="places_dispos"></p>
+						
+					<hr>
+
+					<div id="reserver">
+						<button id="reservationActive">Réservez un Vélo'V dans cette station</button>
+						<button id="reservationInactive">Aucun vélo'v disponible. Veuillez choisir une autre station svp!</button>
+						<button id="stationFermee">Veuillez choisir une autre station svp!</button>
+					</div>
+
+				</div>
+
+				<div id="blocCanvas">
+
+					<div>
+						<p>Apposez votre signature dans le cadre ci-dessous pour valider la réservation</p>
+					</div>
+
+					<div id="cadreCanvas">
+						<canvas id="canvas"></canvas>
+						<div id="boutonCanvas">
+							<button id="valider">Valider</button>
+							<button id="effacer" title="Effacer"><i class="fas fa-eraser"></i></button>
+							<button id="annuler">Annuler</button>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+
+		</section>
+
+	<footer>
+
+			<div id="compteur"></div>
+
+	</footer>
+		
+		
+		<script src="../js/ajax.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgP0SH5S14SIckj03lvdMmoaOmwqQTgvs"></script>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+		<script src="../js/diaporama.js"></script>
+		<script src="../js/markerclusterer.js"></script>
+		<script src="../js/carte-lyon-poo-2.js"></script>
+		<script src="../js/canvas-2.js"></script>
+		<script src="../js/compte-rebours.js"></script>
+
+</body>
+
+</html>

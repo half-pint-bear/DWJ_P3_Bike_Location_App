@@ -1352,7 +1352,7 @@ ClusterIcon.prototype['onAdd'] = ClusterIcon.prototype.onAdd;
 ClusterIcon.prototype['draw'] = ClusterIcon.prototype.draw;
 ClusterIcon.prototype['onRemove'] = ClusterIcon.prototype.onRemove;
 
-/*    Â© 2018 GitHub, Inc.
+/*    © 2018 GitHub, Inc.
     Terms
     Privacy
     Security

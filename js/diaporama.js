@@ -1,9 +1,9 @@
 var indexDiapo = 1;
 
-//CrÃ©ation de l'objet diaporama
+//Création de l'objet diaporama
 var diaporama = {
 
-	//MÃ©thode d'intialisation
+	//Méthode d'intialisation
 	initDiapo : function(n) {
 		var i; 
 		var diapositives = document.getElementsByClassName('diapo');
@@ -17,12 +17,12 @@ var diaporama = {
 			indexDiapo = diapositives.length;
 		};
 
-		//Masquer par dÃ©faut toutes les images
+		//Masquer par défaut toutes les images
 		for(i = 0; i < diapositives.length; i++) {
 			diapositives[i].style.display = "none";
 		};
 
-		//Afficher 1 image Ã  la fois
+		//Afficher 1 image à la fois
 		diapositives[indexDiapo - 1].style.display = "block";
 		
 	},
@@ -38,7 +38,7 @@ var diaporama = {
 }
 
 
-//Actions lors du clic sur les flÃ¨ches Ã  l'Ã©cran
+//Actions lors du clic sur les flèches à l'écran
 $('#suivant').on('click', function() {
 	diaporama.changerDiapo(1);
 });
@@ -47,15 +47,15 @@ $('#precedent').on('click', function() {
 	diaporama.changerDiapo(-1);
 });
 
-//Action lors de l'appui sur les flÃ¨ches du clavier
+//Action lors de l'appui sur les flèches du clavier
 $('body').keydown(function(e) {
 	switch (e.which) {
 
-		case 37://FlÃ¨che gauche
+		case 37://Flèche gauche
 			diaporama.changerDiapo(-1);
 			break;
 
-		case 39://FlÃ¨che droite
+		case 39://Flèche droite
 			diaporama.changerDiapo(1);
 			break;
 	}

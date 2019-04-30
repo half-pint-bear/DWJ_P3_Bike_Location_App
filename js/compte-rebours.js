@@ -3,7 +3,7 @@ var declenchement;
 var compteARebours = {
 	initCompteur : function(station) {
 
-		$('#compteur').html("Votre rÃ©servation Ã  la station <span id='station'></span> est effective pendant <span id='compteurMinutes'></span> minutes et <span id='compteurSecondes'></span> secondes.");
+		$('#compteur').html("Votre réservation à la station <span id='station'></span> est effective pendant <span id='compteurMinutes'></span> minutes et <span id='compteurSecondes'></span> secondes.");
 		
 		var fin = new Date().getTime() + 1200000;
 		
@@ -27,7 +27,7 @@ var compteARebours = {
 
 			if(tempsRestant < 0) {
 				clearInterval(declenchement);
-				$('#compteur').html('Votre rÃ©servation a expirÃ©.');
+				$('#compteur').html('Votre réservation a expiré.');
 				sessionStorage.clear();
 			}
 		}, 1000);

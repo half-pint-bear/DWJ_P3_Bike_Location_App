@@ -7,18 +7,18 @@ var signature = {
 	mouseY : 0,
 	mouseDown : 0,
 
-	//Position du doigt pour Ã©cran tactile
+	//Position du doigt pour écran tactile
 	touchX : 0,
 	touchY : 0,
 
-	//DerniÃ¨re position enregistrÃ©e
+	//Dernière position enregistrée
 	lastX : 0,
 	lastY : 0,
 
 	init : function() {
 		contexte = canvas.getContext('2d');
 
-		//Dessin Ã  la souris
+		//Dessin à la souris
 		canvas.addEventListener('mousedown', signature.clicSouris, false);
 		canvas.addEventListener('mousemove', signature.deplacementSouris, false);
 		canvas.addEventListener('mouseup', signature.relachementSouris, false);
@@ -28,7 +28,7 @@ var signature = {
 		canvas.addEventListener('touchmove', signature.deplacementDoigt, false);
 		canvas.addEventListener('touchend', signature.relachementDoigt, false);
 
-		//Dimensionnement canvas selon taille Ã©cran
+		//Dimensionnement canvas selon taille écran
 		signature.canvasResponsive();
 
 	},

@@ -47,7 +47,7 @@ a:hover {
 }
 
 
-/*Cacher images par dÃ©faut*/
+/*Cacher images par défaut*/
 .diapo {
 	display: none;
 	width: 100%;
@@ -80,7 +80,7 @@ a:hover {
 	background-size: cover;
 }
 
-/*Placement et dimensionnement du texte inhÃ©rents aux diapositives*/
+/*Placement et dimensionnement du texte inhérents aux diapositives*/
 .legende {
 	top: 400px;
 	left: 500px;
@@ -96,7 +96,7 @@ a:hover {
 }
 
 
-/* CrÃ©ation flÃ¨ches bouton "Suivant" & "PrÃ©cÃ©dent" */
+/* Création flèches bouton "Suivant" & "Précédent" */
 #suivant, #precedent {
 	cursor: pointer;
 	position: absolute;
@@ -112,7 +112,7 @@ a:hover {
 	border-radius: 0 3px 3px 0;
 }
 
-/*Placement Ã  droite du bouton "Suivant" */
+/*Placement à droite du bouton "Suivant" */
 #suivant {
 	right: 0;
 	border-radius: 3px 0 0 3px;

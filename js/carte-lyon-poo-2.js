@@ -1,13 +1,13 @@
 var carte = {
 	initMap: 	function() {
 		
-		//PrÃ©paration taille zoom et coordonnÃ©es
+		//Préparation taille zoom et coordonnées
 		var options = {
 			zoom: 13,
 			center: new google.maps.LatLng(45.75, 4.85)
 		};
 
-		//CrÃ©ation de la carte
+		//Création de la carte
 		var map = new google.maps.Map(document.getElementById('map'), options);
 
 		//Appel asynchrone de l'API JCDecaux
@@ -22,14 +22,14 @@ var carte = {
 			var marqueurs = [];
 
 			stations.forEach(function(station) {
-				//RÃ©cupÃ©rer coordonnÃ©es de chaque station
+				//Récupérer coordonnées de chaque station
 				lattitude = station.position.lat;
 				longitude = station.position.lng;
 
-				/*CrÃ©ation des marqueurs
+				/*Création des marqueurs
 
-				SÃ©lection de l'icÃ´ne selon l'Ã©tat de la station
-				et des vÃ©los disponibles */
+				Sélection de l'icône selon l'état de la station
+				et des vélos disponibles */
 				var disponibilite = (station.available_bikes * 100) / station.bike_stands;
 		        var icone;
 
@@ -47,7 +47,7 @@ var carte = {
 		            icone = '../img/station-0.png';
 		        };
 
-		        //RÃ©cupÃ©ration des donnÃ©es attribuÃ©es aux marqueurs
+		        //Récupération des données attribuées aux marqueurs
 				var marqueur = new google.maps.Marker({
 					position: 	{
 						lat: lattitude,
@@ -62,7 +62,7 @@ var carte = {
 		            available_bike_stands:  station.available_bike_stands,
 		            status:                 station.status,
 		            icon: 					icone,
-					//Envoi des marqueurs sur la map dÃ©finie dans initMap
+					//Envoi des marqueurs sur la map définie dans initMap
 					map: 					map
 				});
 
@@ -81,22 +81,22 @@ var carte = {
 
 					infoBulle.open(map, marqueur);
 
-					//RÃ©duire taille carte et afficher encart rÃ©servation selon taille Ã©cran
+					//Réduire taille carte et afficher encart réservation selon taille écran
 					carte.voletInfoResponsive();
 					
 					//Informations sur la station choisie
-					$('#nom').text('NÂ°' + marqueur.station);
+					$('#nom').text('N°' + marqueur.station);
 					$('#adresse').text(marqueur.address);
 
-					//VÃ©rification du nombre de vÃ©los disponibles
-					$('#capacite').html('CapacitÃ© totale : <strong>' + marqueur.bike_stands + '<strong>');
-					$('#velos_dispos').html('VÃ©los disponibles : <strong>' + marqueur.available_bikes + '</strong>');
+					//Vérification du nombre de vélos disponibles
+					$('#capacite').html('Capacité totale : <strong>' + marqueur.bike_stands + '<strong>');
+					$('#velos_dispos').html('Vélos disponibles : <strong>' + marqueur.available_bikes + '</strong>');
 					$('#places_dispos').html('Emplacements libres : <strong>' + marqueur.available_bike_stands + '</strong>');
 
-					//VÃ©rification du statut de la station
+					//Vérification du statut de la station
 					if(marqueur.status !== 'OPEN') {
 						carte.stationFermee();
-					} else if(marqueur.available_bikes === 0) {//Si aucun vÃ©lo disponible, avertir usager
+					} else if(marqueur.available_bikes === 0) {//Si aucun vélo disponible, avertir usager
 						carte.stationVide();
 					} else if(marqueur.available_bike_stands === 0) {
 						carte.stationPleine();
@@ -159,7 +159,7 @@ var carte = {
 				signature.effacerCanvas();
 			});
 			
-			//Fermeture volet rÃ©servation
+			//Fermeture volet réservation
 			$('.fa-times').on('click', function() {
 				$('#map').animate({width: '100%'}, 'slow', function() {
 					$('#reservation').css('display', 'none');
@@ -171,7 +171,7 @@ var carte = {
 				signature.effacerCanvas();
 			});
 
-			//Afficher en permanence l'Ã©tat de la rÃ©servation
+			//Afficher en permanence l'état de la réservation
 			carte.afficherStatutReservation();
 
 		})//Fin ajaxGet
@@ -194,7 +194,7 @@ var carte = {
 	},
 
 	stationFermee : function() {
-		$('#statut').html('Cette station est actuellement <strong>fermÃ©e</strong>');
+		$('#statut').html('Cette station est actuellement <strong>fermée</strong>');
 		$('#statut strong').css('color', 'red');
 		$('#reservationActive').hide();
 		$('#reservationInactive').hide();
@@ -232,7 +232,7 @@ var carte = {
 			compteARebours.initCompteur(sessionStorage.getItem('station'));
 
 		} else {
-			$('#compteur').html("Vous n'avez pas encore effectuÃ© de rÃ©servation. Veuillez choisir une station");
+			$('#compteur').html("Vous n'avez pas encore effectué de réservation. Veuillez choisir une station");
 		}
 	}
 
